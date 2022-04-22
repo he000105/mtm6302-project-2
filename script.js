@@ -5,6 +5,7 @@ const $recent = document.getElementById('recent')
 const $favorites = document.getElementById('favorites')
 const $overlay = document.getElementById('overlay')
 
+const key= U4egscHKRqa7NZb33sEKWAN6Occ6Pfy8ARwr0DK3
 const html = []
 //let apods = []
 
@@ -21,18 +22,19 @@ const apods = [{
 
 // build out recent search
 function buildRecent() {
+  e.preventDefault()
   for (let i = 0; i < apods.length; i++) {
     const apod = apods[i]
     html.push(`
       <div class="list-group-item d-flex align-items-center p-3 mb-3">
-      <img class="square" src="${apod.url}" alt="url">
+      <img class="square" src="${json.url}" alt="url">
       <div class="me-auto">
-        <h2>${apod.title}</h2>
+        <h2>${json.title}</h2>
         <p>
-          <em>${apod.date}</em>
+          <em>${json.date}</em>
         </p>
-        <p>${apod.explanation}</p>
-        <button class="btn btn-primary save">Save to Favorites</button>
+        <p>${json.explanation}</p>
+        <button class="btn btn-primary" id="save">Save to Favorites</button>
       </div>
     </div>`)
   }
@@ -57,7 +59,7 @@ function addFav() {
 
 $form.addEventListener('submit',
   async function (e) {
-    //const response = await fetch('https://api.nasa.gov/planetary/apod/?api_key=' + U4egscHKRqa7NZb33sEKWAN6Occ6Pfy8ARwr0DK3 + '&date=' + date + '&concept_tags=True')
+    //const response = await fetch('https://api.nasa.gov/planetary/apod/?api_key=' + key + '&date=' + date + '&concept_tags=True')
     //const json = await response.json()
     //apods.push(json)
     buildRecent()
@@ -71,7 +73,7 @@ $recent.addEventListener('click',
       //local
       //localStorage.setItem('apods', JSON.stringify(apods))
       const index = e.target.dataset.index
-      localStorage.setItem('favorites', JSON.stringify(apods))
+      localStorage.setItem('favorites', JSON.stringify(favorites))
       addFav()
     }
   })
