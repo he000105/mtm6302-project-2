@@ -1,1 +1,5 @@
-# mtm6302-project-2
+# Final Project
+# Haiyan He
+# 041006828
+
+
