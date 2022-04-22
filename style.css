@@ -1,6 +1,6 @@
 .square {
-  width: 150px;
-  height: 220px;
+  width: 20%;
+  height: fit-content;
   margin-right: 20px;
   background-color: rosybrown;
 }
