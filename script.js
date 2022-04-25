@@ -26,7 +26,7 @@ function buildRecent() {
   for (let i = 0; i < apods.length; i++) {
     const apod = apods[i]
     html.push(`
-      <div class="list-group-item d-flex align-items-center p-3 mb-3">
+      <div class="list-group-item align-items-center p-3 mb-3">
       <img class="square" src="${json.url}" alt="url">
       <div class="me-auto">
         <h2>${json.title}</h2>
